@@ -4,8 +4,6 @@
     <img alt="nf-core/pafba" src="docs/images/nf-core-pafba_logo_light.png">
   </picture>
 </h1>
-[![GitHub Actions CI Status](https://github.com/nf-core/pafba/workflows/nf-core%20CI/badge.svg)](https://github.com/nf-core/pafba/actions?query=workflow%3A%22nf-core+CI%22)
-[![GitHub Actions Linting Status](https://github.com/nf-core/pafba/workflows/nf-core%20linting/badge.svg)](https://github.com/nf-core/pafba/actions?query=workflow%3A%22nf-core+linting%22)[![AWS CI](https://img.shields.io/badge/CI%20tests-full%20size-FF9900?labelColor=000000&logo=Amazon%20AWS)](https://nf-co.re/pafba/results)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 [![Nextflow](https://img.shields.io/badge/nextflow%20DSL2-%E2%89%A523.04.0-23aa62.svg)](https://www.nextflow.io/)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
@@ -17,7 +15,7 @@
 
 ## Introduction
 
-**nf-core/pafba** is a bioinformatics pipeline that ...
+**nf-core/pafba** is a bioinformatics pipeline that generates bacterial growth trought metabolic modeling in different media and growth objectvies...
 
 <!-- TODO nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
@@ -29,8 +27,8 @@
      workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
-1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+1. Load a metabolilc model and media
+2. Simulate FBA for a given objective function
 
 ## Usage
 
@@ -60,7 +58,7 @@ Now, you can run the pipeline using:
 ```bash
 nextflow run nf-core/pafba \
    -profile <docker/singularity/.../institute> \
-   --input samplesheet.csv \
+   --input config_file.json \
    --outdir <OUTDIR>
 ```
 
@@ -78,17 +76,12 @@ For more details about the output files and reports, please refer to the
 
 ## Credits
 
-nf-core/pafba was originally written by JuanCastro.
+nf-core/pafba was originally written by Juan Castro & Sam Brown.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
 <!-- TODO nf-core: If applicable, make list of people who have also contributed -->
 
-## Contributions and Support
-
-If you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).
-
-For further information or help, don't hesitate to get in touch on the [Slack `#pafba` channel](https://nfcore.slack.com/channels/pafba) (you can join with [this invite](https://nf-co.re/join/slack)).
 
 ## Citations
 
@@ -97,12 +90,6 @@ For further information or help, don't hesitate to get in touch on the [Slack `#
 
 <!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 
-An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
 
-You can cite the `nf-core` publication as follows:
+TODO
 
-> **The nf-core framework for community-curated bioinformatics pipelines.**
->
-> Philip Ewels, Alexander Peltzer, Sven Fillinger, Harshil Patel, Johannes Alneberg, Andreas Wilm, Maxime Ulysse Garcia, Paolo Di Tommaso & Sven Nahnsen.
->
-> _Nat Biotechnol._ 2020 Feb 13. doi: [10.1038/s41587-020-0439-x](https://dx.doi.org/10.1038/s41587-020-0439-x).
